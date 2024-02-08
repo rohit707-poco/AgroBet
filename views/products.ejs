@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+  <body>
+    <%- include('./partials/navbar')%>
+      <div class="row justify-content-around">
+        <% for(let i=0 ; i<data.length ; i++){%>
+          <div class="card col-8 col-md-3 col-lg-3 shadow border bg-gradient m-4">
+            <button type="button" class="btn bg-transparent" data-toggle="modal" data-target="#productModal">
+              <img class="card-img-top my-3 border shadow" src="/img/publications/<%=data[i].product_image%>"
+              style="max-width: 200px; max-height: 200px; margin: auto;" alt="<%= data[i].product_name%>" >
+            </button>
+            <div class="card-body">
+              <p class="card-text">
+                <%= data[i].product_name%>
+              </p>
+            </div>
+              <%if(data[i].quantity > 0){%>
+              <div class="mb-3 text-center">
+                <form method="post" action="/products/<%= data[i].category%>">
+                  <input type="hidden" name = "productId" value = "<%= data[i].product_id%>">
+                  <input type="submit" class="btn btn-success mb-0 " value="Add to Cart">
+                </form>
+              </div>
+              <%}else{%>
+                <em class="text-warning fs-5 p-3 text-center">Item not available</em>
+              <%}%>
+          </div>
+          
+        <% }%>
+      </div>
+      <%- include('./partials/footer')%>
+      <%- include('partials/scripts')%>
+  </body>
+
+</html>

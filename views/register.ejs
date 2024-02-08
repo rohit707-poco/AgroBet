@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+
+  <body>
+    <%- include('./partials/navbar')%>
+    <div class="card container my-5 shadow col-11  col-lg-6 mx-auto">
+      <h2 class="text-center my-3">Register User
+        <hr>
+      </h2>
+      <form method="POST" style=" margin: auto; " class="row d-flex justify-content-center">
+        <div class="form-group col-12 col-lg-8 col-md-8 col-lg-8 col-md-8 my-3">
+          <label for="email">Email</label>
+          <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" -->
+          <input type="email" class="form-control" name='email' placeholder="Email">
+        </div>
+        <div class="form-group col-12 col-lg-8 col-md-8 my-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Full Name">
+        </div>
+
+
+        <div class="form-group col-12 col-lg-8 col-md-8 my-3">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" name="address" placeholder="Address">
+        </div>
+        <div class="form-group col-12 col-lg-8 col-md-8 my-3">
+          <label for="mobileNo">Mobile No.</label>
+          <input type="tel" class="form-control" pattern="[0-9]+" title="Can contain only numbers" minlength="10" maxlength="10" name="mobileNo" placeholder="Mobile No">
+        </div>
+
+        <div class="form-group col-12 col-lg-8 col-md-8 my-3">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" name="password" placeholder="Password"
+            style="margin-bottom: 1rem;">
+          <label for="conPassword">Confirm Password</label>
+          <input type="password" class="form-control" name="conPassword" placeholder="Confirm Password">
+        </div>
+        <button type="submit" class="btn btn-success col-6 my-3">Sign Up</button>
+      </form>
+    </div>
+    <%- include('./partials/footer')%>
+
+    <%- include('partials/scripts')%>
+  </body>
+
+</html>

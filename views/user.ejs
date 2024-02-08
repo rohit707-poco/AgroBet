@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+
+    <body>
+        <%- include('./partials/navbar')%>
+            <div class="container d-flex justify-content-around" style="width : 100vw;">
+                <div class="card shadow my-5" style="width: 30rem;">
+                    <div class="container" style="width: 50%;"><img src="/img/pngegg.png" class="card-img-top"></div>
+                    <small class="text-center">Log In / Register to continue.</small>
+                    <div class="card-body d-flex justify-content-around">
+                        <button class="btn btn-success px-5"><a class="link-warning" href="/userLogin">Log In</a></button>
+                        <button class="btn btn-success px-5"><a class="link-light" href="/register">Register</a></button>
+                    </div>
+                </div>
+            </div>
+            <%- include('partials/scripts')%>
+            <%- include('partials/footer')%>
+    </body>
+
+</html>

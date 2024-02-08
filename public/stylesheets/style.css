@@ -1,0 +1,51 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+*{
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(90deg,#0FD64F,#F8EF42);
+}
+
+
+footer{
+    background-image: url(/img/footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none !important;
+}
+
+.user{
+    background-image: linear-gradient(135deg, rgb(182, 244, 146), rgb(51,139,147));
+    /* background-color: #0f9b0f00; */
+}
+
+.item{
+    left: 31%;
+    bottom: 35%;
+}
+
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }  
+
+table td{
+  text-align: center;
+}
+
+
+
+
+input:invalid {
+    border: 3px solid red;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+
+    <body>
+        <%- include('./partials/navbar')%>
+          <div class="">
+            <h2 class="text-center fs-1">Contact Us</h2>
+            <div class="row text-center">
+              <div class="col-lg-6 col-12 d-flex justify-content-center flex-column ">
+                <img class="img-fluid mx-auto" src="/img/byPhone.png" alt="" style="width: 200px;">
+                <div>
+                  <p class="p-3">
+                    <small>Monday to Friday, 9am to 4pm IST</small>
+                    <h5>Toll free:</h5>
+                    <span>
+                      +91 8542631254
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-6 col-12 ">
+                <form class="m-5 p-5 rounded shadow row text-light fs-4 bg-success bg-opacity-50" action="/query" method="post" enctype="multipart/form-data">
+                
+                  <div class=" form-group col-12">
+                    <label for="productName">Your Email</label>
+                    <input type="email" class="form-control mt-2 border-0 bg-opacity-25" name="productName" placeholder="Enter your Email">
+                  </div>
+                  <div class="form-group col-12 mt-3">
+                    <label for="productDetail">Submit Query </label>
+                    <textarea type="text" class="form-control mt-2  border-0 bg-opacity-25" name="productDetail" placeholder="Write your Query here ( 150 words)." rows="5" maxlength="150"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary col-6 mx-auto mt-3">Submit</button>
+                </form>  
+            </div>
+          </div>
+        </div>
+        <%- include('./partials/footer')%>
+        <%- include('partials/scripts')%>
+    </body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head')%>
+</head>
+
+<body>
+    <%- include('./partials/navbar')%>
+        <div class="row mx-auto">
+            <div class="card col-10 col-md-8 col-lg-3 mx-auto">
+                <img class="card-img-top p-3 img-fluid"  src="./img/user.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Admin</h5>
+                    <p class="card-text text-center">Hello userName</p>
+                    <div class="d-flex justify-content-around">
+                        <a href="logout" class="btn btn-success" style="width: 12rem;">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-10 col-md-8 col-lg-8 mx-auto" >
+                <div class="card-body ">
+                    <h3 class="card-title">Admin Console</h3> <hr>
+                    <div class="card-body row d-flex justify-content-around mx-5  rounded bg-opacity-10" style="background-color: #7a838b3b;">
+                        <div class="col-12 col-lg-6 d-flex flex-column ">
+                            <img class="card-img-top p-3 img-fluid mx-auto" style="max-width: 200px;" src="./img/addProduct.png" alt="Add_products_to_cart">
+                            <a href="/addProduct" class="btn btn-success  mx-auto">Add Products</a>
+
+                        </div>
+                        <div class="col-12 col-lg-6 d-flex flex-column">
+                            <img class="card-img-top p-3 img-fluid mx-auto" style="max-width: 200px;" src="./img/viewOrders.png" alt="Chech_for_orders">
+                            <a href="#" class="btn btn-success mx-auto">View Orders</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('./partials/footer')%>
+            <%- include('partials/scripts')%>
+</body>
+
+</html>

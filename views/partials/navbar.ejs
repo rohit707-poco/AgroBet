@@ -1,0 +1,68 @@
+<div class="row m-5 rounded-top shadow mb-0 shadow">
+    <nav class="navbar navbar-expand-lg navbar-light rounded-top bg-success-subtle p-4 fs-5">
+        <div>
+            <button class="navbar-toggler mr-2 " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img class="my-2 my-lg-0" src="/img/hamburger.png" style="width: 2rem;" alt="">
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-underline">
+                    <a href="/" class="img-fluid">
+                        <img src="/img/agrobet.png" style="width: 200px;" alt="user_Login">
+                    </a>    
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Our Products
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/products/insecticide">Insecticides</a></li>
+                        <li><a class="dropdown-item" href="/products/cattle-and-bird-care">Cattle and Bird Care</a></li>
+                        <li><a class="dropdown-item" href="/products/gardening">Gardening</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                </ul>    
+            
+                <ul class="navbar-nav">
+                    <%if(isAuth){%>
+                        <li class="nav-item">
+                            <div class="d-flex flex-column">
+                                <span class="fs-4"><%-isAuth.name.toUpperCase()%></span>
+                                <span class="fs-6">User ID : <small><%-isAuth.user%></small></span>
+                            </div>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a href="/myCart" class="nav-link">
+                                <i class="fas fa-solid fa-cart-shopping display-5 mx-auto text-dark position-relative" >
+                                    <span class="fs-6 position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%-isAuth.cartItem%></span>
+                                </i>
+                            </a>    
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="/user" class="nav-link">
+                                <img src="/img/userLogin.png" style="width: 50px;" alt="user_Login">
+                            </a>
+                        </li>
+                        
+                        <%}else{%>
+                    
+                        <li class="nav-item btn btn-success py-0">
+                            <a href="/user" class="nav-link link-light ">LogIn / Register</a>
+                        </li>
+                    <%}%>
+                </ul>
+        </div>
+    </nav>
+    
+<%if(message){%>
+    <div class="alert alert-<%-message.type%> alert-dismissible fade show" role="alert">
+        <span><%-message.message%></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>

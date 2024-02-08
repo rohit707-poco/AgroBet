@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+<body>
+    <div class="text-center bg-light bg-opacity-50 text-secondary my-5 p-5 w-50 mx-auto rounded">
+        <h3 class="my-5">Enter the details to process payment</h3>
+        <form class="my-5" action="payment" method="POST">
+            <script
+                src="//checkout.stripe.com/v2/checkout.js"
+                class="stripe-button"
+                data-key="<%= key %>"
+                data-amount="<%-(isAuth.gTotal)*100%>"
+                data-currency="inr"
+                data-name="<%-isAuth.name.toUpperCase()%>"
+                data-description=""
+                data-locale="auto" >
+            </script>
+        </form>
+        <button class="btn btn-light  py-1 border-dark px-4"><a class="link-primary" href="myCart">Cancel</a></button>
+    </div>
+    <!-- <%- include('./partials/footer')%> -->
+    <%- include('partials/scripts')%>
+</body>
+
+</html>
